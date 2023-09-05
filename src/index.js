@@ -1,8 +1,12 @@
-import 'simplelightbox/dist/simple-lightbox.min.css';
+import './styles.css';
 
-import './css/styles.css';
 import Notiflix from 'notiflix';
 import SearchImages from './searchImages';
+
+// Описаний в документації
+
+// Додатковий імпорт стилів
+import 'simplelightbox/dist/simple-lightbox.min.css';
 import SimpleLightbox from 'simplelightbox';
 
 import axios from 'axios';
@@ -11,8 +15,6 @@ const submitForm = document.querySelector('.search-form');
 const gallery = document.querySelector('.gallery');
 const loadMoreBtn = document.querySelector('.load-more');
 const endOfResults = document.querySelector('.end-of-results');
-
-// new SimpleLightbox ('.photo-card a', {captionsData: 'alt', captionsDelay: 250})
 
 const searchImages = new SearchImages();
 
