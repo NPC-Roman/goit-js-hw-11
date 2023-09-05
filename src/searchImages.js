@@ -11,7 +11,7 @@ export default class SearchImages {
 
   async fetchImages() {
     const BASE_URL =
-      'https://pixabay.com/api/?key=29767436-14c23983d91939ba59ac81ecb';
+      'https://pixabay.com/api/?key=39262191-95c38e0c922a6e4de67d8ef27';
     const BASE_PARAMS =
       '&image_type=photo&orientation=horizontal&safesearch=true&per_page=40';
 
