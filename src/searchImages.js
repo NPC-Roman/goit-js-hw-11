@@ -10,7 +10,6 @@ export default class SearchImages {
   }
 
   async fetchImages() {
-    // console.log(this)
     const BASE_URL =
       'https://pixabay.com/api/?key=29767436-14c23983d91939ba59ac81ecb';
     const BASE_PARAMS =
@@ -18,7 +17,6 @@ export default class SearchImages {
 
     return await axios
       .get(`${BASE_URL}&q=${this.name}${BASE_PARAMS}&page=${this.page}`)
-      //  .then(response => response.json())
       .then(data => {
         console.log(data.data.total);
         if (data.data.total === 0) {

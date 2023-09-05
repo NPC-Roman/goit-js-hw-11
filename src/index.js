@@ -27,7 +27,6 @@ function findImage(event) {
   }
   searchImages.reset();
 
-  // Встановлюємо випадковий фон
   document.body.style.backgroundColor = getRandomBackgroundColor();
 
   searchImages.fetchImages().then(findGalleryOfImages).catch(noImages);
