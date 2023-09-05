@@ -1,15 +1,11 @@
 import './styles.css';
-
-import Notiflix from 'notiflix';
 import SearchImages from './searchImages';
 
-// Описаний в документації
-
-// Додатковий імпорт стилів
 import 'simplelightbox/dist/simple-lightbox.min.css';
-import SimpleLightbox from 'simplelightbox';
 
+import Notiflix from 'notiflix';
 import axios from 'axios';
+console.log(axios.isCancel('something'));
 
 const submitForm = document.querySelector('.search-form');
 const gallery = document.querySelector('.gallery');
@@ -21,11 +17,11 @@ const searchImages = new SearchImages();
 submitForm.addEventListener('submit', findImage);
 loadMoreBtn.addEventListener('click', loadMore);
 
-function findImage(e) {
-  e.preventDefault();
+function findImage(event) {
+  event.preventDefault();
   resetImages();
   gallery.innerHTML = '';
-  searchImages.newName = e.currentTarget.elements.searchQuery.value.trim();
+  searchImages.newName = event.currentTarget.elements.searchQuery.value.trim();
 
   if (searchImages.newName === '') {
     return noImages();
@@ -90,4 +86,17 @@ function noImages() {
   Notiflix.Notify.failure(
     'Sorry, there are no images matching your search query. Please try again.'
   );
+}
+
+const backgroundColors = [
+  '#FF5733',
+  '#33FF57',
+  '#5733FF',
+  '#33FFFF',
+  '#FFFF33',
+];
+
+function getRandomBackgroundColor() {
+  const randomIndex = Math.floor(Math.random() * backgroundColors.length);
+  return backgroundColors[randomIndex];
 }

@@ -4,8 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JS 11</title>
-
-    <script type="module" src="./index.js"></script>
   </head>
   <body>
     <form class="search-form" id="search-form">
@@ -16,6 +14,16 @@
         placeholder="Search images..."
       />
       <button type="submit" class="search-btn">Search</button>
+    </form>
+
+    <div class="gallery">
+      <!-- Картки зображень -->
+    </div>
+
+    <button type="button" class="load-more is-hidden">Load more</button>
+    <p class="end-of-results is-hidden">We're sorry, but you've reached the end of search results</p>
+
+    <script src="index.js" type="module"></script>
     </form>
   </body>
 </html>
