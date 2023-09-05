@@ -10,7 +10,6 @@ console.log(axios.isCancel('something'));
 const submitForm = document.querySelector('.search-form');
 const gallery = document.querySelector('.gallery');
 const loadMoreBtn = document.querySelector('.load-more');
-const endOfResults = document.querySelector('.end-of-results');
 
 const searchImages = new SearchImages();
 
@@ -27,6 +26,9 @@ function findImage(event) {
     return noImages();
   }
   searchImages.reset();
+
+  // Встановлюємо випадковий фон
+  document.body.style.backgroundColor = getRandomBackgroundColor();
 
   searchImages.fetchImages().then(findGalleryOfImages).catch(noImages);
 }
@@ -89,11 +91,13 @@ function noImages() {
 }
 
 const backgroundColors = [
-  '#FF5733',
-  '#33FF57',
-  '#5733FF',
-  '#33FFFF',
-  '#FFFF33',
+  '#E0BBE4',
+  '#FFDFD3',
+  '#9EDEF2',
+  '#C6F2AF',
+  '#D3DFCB',
+  '#FDF8E6',
+  '#FFFEDB',
 ];
 
 function getRandomBackgroundColor() {
