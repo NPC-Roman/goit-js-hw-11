@@ -7,19 +7,21 @@ import Notiflix from 'notiflix';
 import axios from 'axios';
 console.log(axios.isCancel('something'));
 
-const submitForm = document.querySelector('.search-form');
-const gallery = document.querySelector('.gallery');
-const loadMoreBtn = document.querySelector('.load-more');
+const elements = {
+  submitForm: document.querySelector('.search-form'),
+  gallery: document.querySelector('.gallery'),
+  loadMoreBtn: document.querySelector('.load-more'),
+};
 
 const searchImages = new SearchImages();
 
-submitForm.addEventListener('submit', findImage);
-loadMoreBtn.addEventListener('click', loadMore);
+elements.submitForm.addEventListener('submit', findImage);
+elements.loadMoreBtn.addEventListener('click', loadMore);
 
 function findImage(event) {
   event.preventDefault();
   resetImages();
-  gallery.innerHTML = '';
+  elements.gallery.innerHTML = '';
   searchImages.newName = event.currentTarget.elements.searchQuery.value.trim();
 
   if (searchImages.newName === '') {
@@ -37,7 +39,7 @@ function loadMore() {
 }
 
 function findGalleryOfImages(images) {
-  gallery.insertAdjacentHTML('beforeend', allImages(images));
+  elements.gallery.insertAdjacentHTML('beforeend', allImages(images));
 }
 
 function allImages(images) {
@@ -80,7 +82,7 @@ function allImages(images) {
 }
 
 function resetImages() {
-  gallery.innerHTML = '';
+  elements.gallery.innerHTML = '';
 }
 
 function noImages() {
