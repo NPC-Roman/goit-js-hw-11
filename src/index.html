@@ -3,10 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+
     <title>JS 11</title>
   </head>
   <body>
-    <form class="search-form" id="search-form">
+    <div class="container">
+      <div class="swiper">
+        <div class="swiper-wrapper"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+
+    <!-- <form class="search-form" id="search-form">
       <input
         type="text"
         name="searchQuery"
@@ -17,13 +29,17 @@
     </form>
 
     <div class="gallery">
-      <!-- Картки зображень -->
-    </div>
+      Картки зображень -->
+    <!-- </div>
 
     <button type="button" class="load-more is-hidden">Load more</button>
     <p class="end-of-results is-hidden">We're sorry, but you've reached the end of search results</p>
 
     <script src="index.js" type="module"></script>
-    </form>
+    </form> -->
+    <script src="index.js" type="module"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="swiper.js" type="module"></script>
   </body>
 </html>
