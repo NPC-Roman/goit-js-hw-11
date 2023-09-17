@@ -109,18 +109,327 @@ input {
 .end-of-results {
   text-align: center;
 } */
-
+/*
 .container {
   width: 500px;
   height: 350px;
   margin-left: 250px;
 }
-/* .swiper-slide {
+
+.swiper-slide {
   display: flex;
   border: red solid 5px;
-} */
+  max-height: 468px;
+  max-width: 871px;
+}
+
 .layout {
   display: flex;
   margin-top: 150px;
   margin-bottom: 300px;
+}
+*/
+/*
+.cook {
+  height: 442px;
+  width: 137px;
+}
+
+.dish-desc {
+  height: 442px;
+  width: 351px;
+}
+
+.dish {
+  height: 442px;
+  width: 351px;
+}
+*/
+
+:root {
+  /* ---------------element colors-----------------  */
+
+  /* background */
+  --color-page-bcg: rgb(248, 248, 248, 100%);
+  --color-element-bcg: rgb(5, 5, 5, 100%);
+  --color-menu-mobile-bcg: rgb(155, 181, 55, 100%);
+
+  /* text */
+  --color-title-text: rgb(5, 5, 5, 100%);
+  --color-green-title-text: rgb(155, 181, 55, 100%);
+
+  /* cards */
+  --color-card-hero-text: rgb(248, 248, 248, 60%);
+  --color-card-text: rgb(248, 248, 248, 100%);
+
+  /* filter */
+  --color-selector-text: rgb(5, 5, 5, 50%);
+  --color-selector-categ-text: rgb(5, 5, 5, 30%);
+  --color-selector-categ: rgb(5, 5, 5, 20%);
+
+  /* switch */
+  --color-switch-bcg: rgb(205, 205, 205, 100%);
+
+  /* button */
+  --color-button-text: rgb(5, 5, 5, 100%);
+  --color-button-bcg: rgb(248, 248, 248, 100%);
+  --color-button-card-bcg: rgb(155, 181, 55, 100%);
+
+  /* rating */
+  --color-rating-bcg: rgb(238, 161, 12, 100%);
+
+  /* hover and select color */
+  --color-hover-bcg: rgb(155, 181, 55, 100%);
+  --color-hover-text: rgb(5, 5, 5, 100%);
+  --color-selector-check: rgb(5, 5, 5, 100%);
+  --color-select-open-bcg: rgb(255, 255, 255, 100%);
+
+  /* modal recipe */
+  --color-modal-recipe-placeholder: rgb(5, 5, 5, 10%);
+  --color-modal-recipe-text: rgb(5, 5, 5, 80%);
+  --color-modal-recipe-rating-text: rgb(5, 5, 5, 50%);
+  --color-modal-recipe-tags-border: rgb(5, 5, 5, 20%);
+  --color-modal-recipe-backdrop: rgb(5, 5, 5, 30%);
+  --color-modal-recipe-backdground: rgb(255, 255, 255, 100%);
+
+  /* ---------------animation --------------------------*/
+
+  /* Transition */
+  --transition-dur-func: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* shadow */
+  --reviews-card-shadow: 0px 9.04932px 26.5717px rgba(215, 228, 249, 0.25);
+}
+
+[dark] {
+  /* text */
+  --color-page-bcg: rgb(22, 22, 22, 100%);
+  --color-title-text: rgb(5, 5, 5, 100%);
+  --color-element-bcg: rgb(255, 255, 255, 100%);
+  --color-title-text: rgb(255, 255, 255, 100%);
+  --color-button-bcg: rgb(30, 30, 30, 100%);
+  --color-button-text: rgb(255, 255, 255, 100%);
+  --color-selector-text: rgb(255, 255, 255, 50%);
+  --color-selector-check: rgb(255, 255, 255, 100%);
+  --color-select-open-bcg: rgb(5, 5, 5, 100%);
+}
+
+.section-hero {
+  background-color: var(--color-page-bcg);
+  padding-top: 92px;
+  padding-bottom: 40px;
+}
+
+@media only screen and (min-width: 768px) {
+  .section-hero {
+    display: flex;
+    gap: 40px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+.hero-block-text-title {
+  margin-bottom: 14px;
+  color: var(--color-title-text);
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 31px;
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-block-text-title {
+    margin-bottom: 16px;
+    font-size: 36px;
+    line-height: 43px;
+  }
+}
+
+.hero-block-text {
+  margin-bottom: 28px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--color-title-text);
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-block-text {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 32px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 768px) {
+  .hero-block-texts {
+    display: flex;
+    width: 446px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-block-texts {
+    margin-bottom: 32px;
+  }
+}
+
+@media only screen and (min-width: 320px) {
+  .hero-block-texts {
+    margin-bottom: 32px;
+  }
+}
+
+.hero-words {
+  color: var(--color-green-title-text);
+  font-style: italic;
+  font-family: Inter;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 31px;
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-words {
+    font-size: 36px;
+    line-height: 43px;
+  }
+}
+
+.hero-btn {
+  padding: 10px 20px;
+  border-radius: 12px;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-btn {
+    border-radius: 15px;
+  }
+}
+
+.hero-btn:hover,
+.hero-btn:focus {
+  color: #f8f8f8;
+  background-color: var(--color-hover-bcg);
+}
+
+/* slider styles  */
+.swiper {
+  position: relative;
+  width: 100%;
+  height: 304px;
+  /* overflow: hidden; */
+}
+
+.swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--color-menu-mobile-bcg);
+}
+
+.hero-event {
+  display: flex;
+  gap: 8px;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  /* overflow: visible;
+  width: calc(100% + 90px); */
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-event {
+    gap: 16px;
+    align-items: flex-start;
+  }
+}
+
+.hero-block-cook {
+  width: 80px;
+  height: 280px;
+}
+
+.hero-block-cook-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.hero-block-event {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 200px;
+  height: 280px;
+  background-color: var(--color-element-bcg);
+  border-radius: 15px;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-block-event {
+    width: 351px;
+  }
+}
+
+.hero-block-event-img {
+  margin-bottom: 20px;
+  width: auto;
+  height: auto;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.hero-block-event-title {
+  display: block;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 14px;
+  text-transform: uppercase;
+
+  color: rgb(248, 248, 248, 60%);
+}
+
+.hero-block-meal {
+  width: 185px;
+  height: 280px;
+  background-color: var(--color-element-bcg);
+  border-radius: 15px;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-block-meal {
+    /* width: 351px; */
+    max-width: 351px;
+  }
+}
+
+.hero-block-meal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.hero-block-event-text {
+  display: block;
+  text-align: center;
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 12px;
+  text-transform: uppercase;
+
+  color: rgb(248, 248, 248, 20%);
 }

@@ -104,6 +104,7 @@
 //   const randomIndex = Math.floor(Math.random() * backgroundColors.length);
 //   return backgroundColors[randomIndex];
 // }
+/*
 import { fetchEvents } from './API';
 import './styles.css';
 
@@ -122,10 +123,10 @@ function renderSlide(el) {
       <div class="swiper-slide">
       <div class="layout">
       <div class="slide-layout cook">
-        <img src="${cook.imgUrl}" alt="${cook.name}" width="200px" height="200px" />
+        <img src="${cook.imgUrl}" alt="${cook.name}" width="137px" height="442px" />
       </div>
     
-      <div class="slide-layout food-preview">
+      <div class="slide-layout dish-desc">
         <img
           src="${topic.previewUrl}"
           alt="${topic.name}"
@@ -135,7 +136,7 @@ function renderSlide(el) {
         <p class="dish-name">${topic.name}</p>
         <p class="country">${topic.area}</p>
       </div>
-      <div class="slide-layout food-large">
+      <div class="slide-layout dish">
         <img
           src="${topic.imgWebpUrl}"
           alt="${topic.name}"
@@ -149,4 +150,30 @@ function renderSlide(el) {
          `;
     })
     .join('');
+}*/
+
+import { getAllEvents } from './api-service.js';
+import { createMarkupHeroEvents } from './hero-events.js';
+import { refs } from './refs.js';
+
+import 'swiper/swiper-bundle.min.css';
+import 'swiper/swiper.min.css';
+
+export async function loadHeroData() {
+  try {
+    const events = await getAllEvents();
+    const markup = createMarkupHeroEvents(events);
+    refs.swiperWrapperHero.insertAdjacentHTML('beforeend', markup);
+
+    const heroSwiper = new Swiper('.swiper-hero', {
+      slidesPerView: 0.8,
+      spaceBetween: 40,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+  } catch (err) {
+    console.log(err);
+  }
 }
